@@ -1,0 +1,1 @@
+- **Monitor for unusual process activity** such as processes that are consuming a lot of CPU or memory, or processes that are running from unusual locations. This can help you to identify machines that may have malware installed.

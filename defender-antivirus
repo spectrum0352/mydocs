@@ -1,0 +1,23 @@
+
+ 
+Prerequisites:
+Minimum component versions:
+-	Antimalware client: 4.18.2211.5
+-	Engine: 1.1.19900.2
+-	Security intelligence: 1.391.345.0
+-	Xplat version: 101.23102.* +
+-	Sensor/ KB version: >10.8040.*/ March 8, 2022+
+
+
+Requirements
+•	MDE sensors depends on ability of Microsoft Defender Antivirus to scan files and provide information about them.
+•	If you are running Microsoft Defender Antivirus as the primary antimalware product on your devices, the Defender for Endpoint agent will successfully onboard.
+•	If you are running a third-party antimalware client and use Mobile Device Management solutions or Microsoft Endpoint Manager (current branch), you will need to ensure the Microsoft Defender Antivirus ELAM driver is enabled.
+
+
+
+
+
+
+
+ 

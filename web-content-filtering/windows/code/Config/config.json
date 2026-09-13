@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "blocked": [
+    "youtube.com",
+    "www.youtube.com",
+    "m.youtube.com",
+    "youtu.be",
+    "facebook.com",
+    "instagram.com"
+  ],
+  "whitelist": [
+    "learn.microsoft.com"
+  ]
+}

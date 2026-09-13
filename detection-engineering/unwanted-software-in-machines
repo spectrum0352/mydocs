@@ -1,0 +1,10 @@
+// Get a list of all known unwanted software processes
+let unwantedSoftwareList = securityDatabase | project ProcessName;
+
+DeviceProcessEvents
+| where ProcessName in (unwantedSoftwareList)
+| project DeviceName
+// Search for machines that have unwanted software installed
+let machinesWithUnwantedSoftware = DeviceProcessEvents
+| where ProcessName in (unwantedSoftwareList)
+| project DeviceName

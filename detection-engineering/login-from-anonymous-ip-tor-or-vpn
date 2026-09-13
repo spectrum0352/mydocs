@@ -1,0 +1,2 @@
+SigninLogs
+| where IPAddress in (externaldata(ip:string)["https://raw.githubusercontent.com/stamparm/ipsum/master/ipsum.txt"])

@@ -1,0 +1,3 @@
+AzureDiagnostics
+| where ResourceType == "VAULTS"
+| where OperationName contains "SecretGet"

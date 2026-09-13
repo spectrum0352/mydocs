@@ -1,0 +1,111 @@
+{
+  "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2019-05-01/workflowdefinition.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "triggers": {
+    "When_a_response_to_an_Azure_Sentinel_alert_is_triggered": {
+      "type": "ApiConnectionWebhook",
+      "inputs": {
+        "host": {
+          "connection": {
+            "name": "@parameters('$connections')['azuresentinel']['connectionId']"
+          }
+        },
+        "body": {
+          "callback_url": "@{listCallbackUrl()}"
+        },
+        "path": "/incident"
+      }
+    }
+  },
+  "actions": {
+    "Initialize_IP_Variable": {
+      "type": "InitializeVariable",
+      "inputs": {
+        "variables": [
+          {
+            "name": "maliciousIP",
+            "type": "string",
+            "value": "@triggerBody()?['Entities']?[0]?['Address']"
+          }
+        ]
+      }
+    },
+    "Condition_Check_IP_Exists": {
+      "type": "If",
+      "expression": {
+        "and": [
+          {
+            "not": {
+              "equals": [
+                "@variables('maliciousIP')",
+                ""
+              ]
+            }
+          }
+        ]
+      },
+      "actions": {
+        "Add_to_Sentinel_Watchlist": {
+          "type": "ApiConnection",
+          "inputs": {
+            "host": {
+              "connection": {
+                "name": "@parameters('$connections')['azuresentinel']['connectionId']"
+              }
+            },
+            "method": "post",
+            "path": "/watchlists/{watchlistAlias}/watchlistItems",
+            "body": {
+              "itemsKeyValue": {
+                "IPAddress": "@variables('maliciousIP')",
+                "AddedOn": "@utcNow()",
+                "Source": "Automated Playbook"
+              }
+            }
+          }
+        },
+        "Call_Block_IP_API": {
+          "type": "Http",
+          "inputs": {
+            "method": "POST",
+            "uri": "https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<rg>/providers/Microsoft.Network/azureFirewalls/<firewall-name>/blockIP",
+            "headers": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "ipAddress": "@variables('maliciousIP')"
+            },
+            "authentication": {
+              "type": "ManagedServiceIdentity"
+            }
+          }
+        },
+        "Add_Comment_to_Incident": {
+          "type": "ApiConnection",
+          "inputs": {
+            "host": {
+              "connection": {
+                "name": "@parameters('$connections')['azuresentinel']['connectionId']"
+              }
+            },
+            "method": "post",
+            "path": "/incidents/@{triggerBody()?['IncidentId']}/comments",
+            "body": {
+              "message": "IOC Blocking executed for IP: @{variables('maliciousIP')}"
+            }
+          }
+        }
+      },
+      "else": {
+        "actions": {
+          "No_IP_Found_Log": {
+            "type": "Compose",
+            "inputs": "No IP found in incident entities."
+          }
+        }
+      }
+    }
+  },
+  "outputs": {}
+}

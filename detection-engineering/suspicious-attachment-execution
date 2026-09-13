@@ -1,0 +1,2 @@
+EmailAttachmentInfo
+| where FileType in ("exe","js","vbs")
