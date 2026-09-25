@@ -1,3 +1,5 @@
+# Network Sniffing Attacks
+
 # Introduction
 
 please summarize and correct: Network Sniffing is a process of monitoring and capturing all data packets passing through a given network using sniffing tools. It is a form of wiretap applied to computer networks. Many enterprises' switch ports are open. Anyone in the same physical location can plug into the network using an Ethernet cable. Sniffing is a technique used to monitor and capture network traffic. It involves using specialized tools to intercept data packets passing through a network, essentially acting as a wiretap for computer networks. Network sniffing is the technique of capturing data packets traveling across a network. It's like eavesdropping on a conversation, but for computer networks. Sniffing tools can be used for legitimate purposes like network monitoring and troubleshooting, but attackers can also use them to steal sensitive information. It means every packet that travels across the internet or a local network is gathered for a wide range of purposes such as – monitoring the traffic & bandwidth, maintain the networks, analyse the data collected by the device, and so on. • MAC Address Snooping • DNS Spoofing • ICMP Redirect • NTLM Hash Capture What is Sniffing? o The act of monitoring and capturing all data packets passing through a network. o Essentially, it's like wiretapping for computer networks. o Exploits open network ports, allowing anyone with physical access to easily tap into the network. Promiscuous Mode Sniffer turns the NIC of a system to the promiscuous mode so that it listens to all the data transmitted on its segment. Decode Information A sniffer can constantly monitor all the network traffic to a computer through the NIC by decoding the information encapsulated in the data packet. How attacker Hacks the Network Using Sniffers? • Connect to Network: An attacker connects his laptop to a switch port. • Reconnaissance Network: Runs discovery tools to learn about network topology. • Identify Victim Machine: Identifies the victim's machine to target his attacks. • Poisons the victim machine by using ARP spoofing techniques. • The traffic destined for the victim machine is redirected to the attacker. • The hacker extracts passwords and sensitive data from the redirected traffic. • Promiscuous Mode: Sniffers put network interface cards (NICs) into promiscuous mode, allowing them to capture all traffic on the network segment. • Decoding Information: Sniffers decode the information encapsulated in data packets to monitor network traffic. • Network Interface Card (NIC) Modes: o Normal Mode: NIC only processes packets addressed to the connected device. o Promiscuous Mode: NIC captures all traffic on the network segment. Attackers use tools to put a NIC in promiscuous mode. • Sniffing Techniques: o Passive Sniffing: Exploits hubs (outdated technology) where all devices receive all traffic. o Active Sniffing: Injects packets (e.g., ARP spoofing) to manipulate network switches and capture traffic. o Promiscuous Mode: Sniffers put the network interface card (NIC) into this mode, allowing it to "listen" to all network traffic. o Decoding Information: Sniffers decode the information within captured data packets.
@@ -463,3 +465,41 @@ Using sniffing tools on a network you do not own is illegal. Sniffing can be a s
 - **Countermeasures:** Added specific recommendations for preventing MAC address spoofing and improving wireless security.
 
 This summary aims to provide a concise and accurate overview of network sniffing, its threats, detection, and countermeasures.
+
+# Types: 
+
+Passive Sniffing, Active Sniffing.
+
+Examples: Wireshark: Example: An attacker uses Wireshark to capture and analyze packets on a network, gaining unauthorized access to sensitive information, such as login credentials.
+
+# Security solution: - 
+
+Security Solution: Encryption (SSL/TLS, VPNs), Network Segmentation, Intrusion
+
+Detection/Prevention Systems (IDS/IPS).
+
+# Detection: - - 
+
+Detection in SIEM: Monitoring for unauthorized sniffing activities, and analyzing network traffic for
+
+abnormal patterns.
+
+SIEM Solution Features: Log analysis, real-time monitoring, and detection of unusual network
+
+behaviour.
+
+# Mitigation: 
+
+- Encrypt sensitive data using protocols like SSL/TLS or VPNs. Implement network segmentation to limit access to sensitive information. Use intrusion detection/prevention systems to detect and block sniffing attempts.
+
+# Purpose
+
+Track file changes for sensitive files (SOC2 CC6.7 - System Operations).
+
+# Query
+
+index=linux sourcetype=linux_secure \| search "chmod" OR "chown"
+
+# Outcome
+
+Monitors for any modifications to critical files or directories. Detects unauthorized or suspicious file permission changes
