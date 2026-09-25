@@ -1,4 +1,4 @@
-# Anonymous Logins for Attackers
+2# Anonymous Logins for Attackers
 
 This guide explores the risks of anonymous logins in network services,
 particularly focusing on **FTP** and **SMB**. These services can be

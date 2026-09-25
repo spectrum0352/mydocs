@@ -99,8 +99,6 @@ joiner - auto-provision access
 mover - role update
 leaver - immediate deprovision
 
-
-
 6.2 Group-Based Access (Critical for Scale)
 •	Dynamic groups (based on attributes)
 •	Nested group structures
