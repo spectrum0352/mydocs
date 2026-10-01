@@ -95,3 +95,44 @@ Responsibilities
 •	Collaborated with IT and development teams to prioritize vulnerabilities and implement timely remediations.
 •	Operated within the SAFe Agile framework to deliver security features through planning, analysis, development, testing, and implementation.
 
+
+Analyst
+Focus: 
+o	Monitoring, threat detection, incident handling, reporting, and escalation.
+o	Tactical threat detection, incident response, SOC operations
+o	Threat detection, incident response, monitoring, reporting.
+
+Responsibilities
+o	Analysed IDS/IPS alerts and reviewed weekly reports for threat intelligence updates.
+o	Assessed vulnerabilities in non-cloud systems and recommended mitigation.
+o	Collaborated with the Security Operations Center (SOC) team for incident reporting and monitoring.
+o	Collected IOCs for continuous threat monitoring and updated lookup tables.
+o	Conducted incident response and managed breach recovery processes.
+o	Conducted incident response and validated response plans.
+o	Conducted risk-based assessments, reviewed patching/security exceptions.
+o	Created and updated use cases, runbooks, and automation rules for device onboarding.
+o	Created standard operating procedures (SOPs) and incident response runbooks.
+o	Developed and improved incident response and vulnerability management processes.
+o	Established and operated Security Operations Centers (SOC), overseeing SIEM, threat intelligence, incident response, and vulnerability management.
+o	Established SOC processes including SIEM configuration, log parsing, and threat hunting.
+o	Familiar with EDR/XDR platforms like CrowdStrike Falcon, Microsoft Defender.
+o	Gained exposure to SIEM tools like QRadar and basic malware analysis techniques (static/dynamic analysis).
+o	Handled high-priority (P1) security incidents and coordinated bridge calls.
+o	Integrated logs from firewalls, IDS/IPS, EDR, cloud assets, and IoT systems into SIEM platforms.
+o	Investigated phishing emails and conducted email threat assessments.
+o	Led and managed 24×7 SOC operations as a Level-3 Analyst.
+o	Managed shift schedules and trained new SOC team members.
+o	Monitored alerts across Windows, EDR, firewall, and cloud environments.
+o	Operated as an L2 SOC analyst investigating escalated security incidents.
+o	Performed threat hunting and compliance assessments (MITRE ATT&CK, NIST).
+o	Performed vulnerability scanning, provided remediation recommendations.
+o	Provided mentorship to junior analysts and maintained operational documentation.
+o	SOC Analyst with 2 years of experience specializing in SIEM monitoring, threat detection, and security incident response using integrated platforms.
+o	Supported vulnerability management, patching, and asset tracking.
+o	Tuned alerts and created suppressions to reduce false positives.
+o	Used SOAR-enabled SIEM tools for log correlation and threat identification.
+o	Utilized Splunk ES and Microsoft Sentinel for threat detection and deep-dive log analysis.
+o	Worked in SOC environments, identifying and mitigating real-time threats.
+o	Worked with external forensic teams and vendors for advanced threat investigations and tool support.
+
+
