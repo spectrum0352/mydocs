@@ -131,3 +131,55 @@ Responsibilities
 •	Worked with Azure cloud logging tools, including Log Analytics, diagnostics logs, and activity log settings for monitoring and security validation.
 •	Worked with IT professionals to integrate cloud security into existing systems.
 
+Engineer
+Focus: 
+o	Hands-on implementation, operations, tool integration
+o	Building and maintaining secure infrastructure, automation, configuration, and operational support.
+o	Implementation, configuration, automation, and operationalization.
+
+Responsibilities
+o	Analysed and remediated vulnerabilities using Tenable and CrowdStrike reports for on-prem and cloud.
+o	Analysed, enriched event data, and performed threat and target analysis duties.
+o	Automated security tasks with Python and Bash scripting (e.g., bypassing Google rate-limiting, URL parsing).
+o	Built and managed virtual machines (Windows/Linux) in on-prem and Azure environments.
+o	Collaborated with cross-functional IT teams to remediate threats and vulnerabilities.
+o	Conducted security risk assessments, audits, and gap assessments.
+o	Configured and monitored Azure resources (VMs, Storage, IAM, NSG, VNet Peering).
+o	Contributed to network restoration and security incident response.
+o	Coordinated and distributed vulnerability and threat advisories to relevant teams.
+o	Created and maintained network information sheets (NIS), confluence updates, and portal management.
+o	Created lifecycle policies, audit workflows, and automated provisioning/de-provisioning processes.
+o	Created technical and managerial reports, risk assessments, and updated the knowledge base.
+o	Defined IAM, VPC, encryption, and monitoring strategies using AWS IAM, Lambda, CloudFormation, etc.
+o	Defined proactive and reactive security controls to minimize residual risk and secure threat surfaces.
+o	Deployed and administered EDR solutions (CrowdStrike Falcon, Sophos, Cylance).
+o	Designed and enforced privileged access controls using CyberArk, Azure SSO, and AWS IAM.
+o	Designed and implemented endpoint threat detection and anomaly detection on networks.
+o	Designed dashboards for security monitoring/reporting to stakeholders.
+o	Developed and maintained Linux-based firewalls using IPtables and SELinux for system hardening.
+o	Developed automations to improve delivery quality and remove human intervention.
+o	Developed Splunk dashboards to monitor application behavior, errors, and system changes.
+o	Developed vulnerability monitoring dashboards and resolved scanning/reporting issues.
+o	Handled monitoring tools, patching, and cost optimization in hybrid cloud environments.
+o	Implemented detection and response solutions, collaborating with cross-functional teams.
+o	Implemented security across geographically distributed environments.
+o	Implemented vulnerability management tools (Tenable, Outpost24) and email security solutions (Lucy plugin).
+o	Integrated application security into DevOps workflows using tools like OWASP ZAP, WebInspect, and custom policies.
+o	Integrated SAST/DAST tools into CI/CD pipelines and led secure SDLC and application security practices.
+o	Managed and configured Juniper and Alcatel routers and Arbor DDoS protection devices.
+o	Managed AV/EDR and resolved incidents within SLA.
+o	Managed CI/CD pipelines across multiple microservices and environments.
+o	Orchestrated container workloads using Kubernetes, ECS, and Docker.
+o	Performed DDoS mitigation and response coordination, including clean return peer reinsertion.
+o	Performed environment monitoring and infrastructure automation using tools like Datadog, ELK, CloudWatch, and Prometheus.
+o	Performed vulnerability assessments and managed certification planning for products.
+o	Presented new security tools and techniques to internal teams.
+o	Provided cybersecurity expertise for applications, networks, and databases.
+o	Supported automation and configuration using tools like Ansible, BladeLogic, and SNOW.
+o	Supported cloud security, IAM access control, and RDS backup activities.
+o	Supported endpoint compliance and patch enforcement.
+o	Supported VMware infrastructure upgrades, ESXi patching, VM migrations, and DR planning.
+o	Verified IP address space, BGP policy setup, and ASN configurations.
+o	Worked in a SOC environment, demonstrating problem-solving skills and experience with various tools.
+o	Worked on Windows Server, Active Directory, and Azure AD from a security engineering standpoint.
+
