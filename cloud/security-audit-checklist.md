@@ -1,9 +1,9 @@
 # Security audit checklist
 
-• Cloud security governance framework documented
-• Cloud security policies formally approved
-• Cloud risk register maintained
-• Cloud shared responsibility model documented
+- Cloud security governance framework documented
+- Cloud security policies formally approved
+- Cloud risk register maintained
+- Cloud shared responsibility model documented
 • Roles and responsibilities clearly defined
 • Cloud security strategy aligned with business objectives
 • Data classification policy implemented
