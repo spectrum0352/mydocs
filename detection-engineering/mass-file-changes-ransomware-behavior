@@ -1,3 +1,0 @@
-DeviceFileEvents
-| summarize FileChanges = count() by DeviceName, bin(TimeGenerated, 5m)
-| where FileChanges > 500

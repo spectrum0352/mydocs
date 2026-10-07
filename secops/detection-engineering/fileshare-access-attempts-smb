@@ -1,0 +1,37 @@
+SecurityEvent
+| where EventID == 30219
+| project TimeGenerated, Computer, AccountName, FileName = TargetFilename, AccessType, Status, EventLevelName, Activity
+| order by TimeGenerated desc
+
+#Split: Successful vs Failed Attempts---
+
+#Successful Access (Informational)
+SecurityEvent
+| where EventID == 30219
+| where EventLevelName == "Information"
+| project TimeGenerated, Computer, AccountName, FileName = TargetFilename, AccessType
+
+#Failed Access (Warning)
+SecurityEvent
+| where EventID == 30219
+| where EventLevelName == "Warning"
+| project TimeGenerated, Computer, AccountName, FileName = TargetFilename, AccessType
+
+#Filter By User
+SecurityEvent
+| where EventID == 30219
+| where AccountName =~ "UserAccount"
+| project TimeGenerated, FileName = TargetFilename, AccessType, Status
+
+#Filter By Remote IP Address (Useful for SMB access over the network)
+SecurityEvent
+| where EventID == 30219
+| where IpAddress in ("192.168.1.10", "10.10.20.5")
+| project TimeGenerated, AccountName, IpAddress, FileName = TargetFilename, AccessType, Status
+
+#Suspicious Access Patterns (Multiple Failures)
+SecurityEvent
+| where EventID == 30219 and EventLevelName == "Warning"
+| summarize FailedAttempts=count() by AccountName, Computer, bin(TimeGenerated, 15m)
+| where FailedAttempts > 5
+| order by FailedAttempts desc

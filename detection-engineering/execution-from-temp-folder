@@ -1,2 +1,0 @@
-DeviceProcessEvents
-| where FolderPath contains "\\Temp\\"

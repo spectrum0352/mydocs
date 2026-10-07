@@ -1,0 +1,4 @@
+SigninLogs
+| where ResultType != 0 and AuthenticationRequirement == "multiFactorAuthentication"
+| summarize count() by UserPrincipalName, bin(TimeGenerated, 5m)
+| where count_ > 3

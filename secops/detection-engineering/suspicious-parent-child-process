@@ -1,0 +1,3 @@
+DeviceProcessEvents
+| where InitiatingProcessFileName == "winword.exe"
+| where FileName == "cmd.exe"

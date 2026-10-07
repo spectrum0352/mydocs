@@ -1,0 +1,3 @@
+CommonSecurityLog
+| summarize TrafficVolume = sum(SentBytes) by SourceIP, bin(TimeGenerated, 5m)
+| where TrafficVolume > 100000000

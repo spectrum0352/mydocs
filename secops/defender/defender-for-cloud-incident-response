@@ -1,0 +1,29 @@
+
+## Investigation through MDC
+
+Key Concepts:
+
+- **Real-time Security Events:** MDC alerts notify you of potential
+  risks in your Azure environment.
+
+- **Severity Levels:** Alerts are categorized by severity (High, Medium,
+  Low, Informational) to prioritize response.
+
+- **Indicators of Compromise (IoCs):** Alerts provide IoCs like affected
+  resource IDs, attacker IP addresses, and user UPNs.
+
+- **Email Notifications:** You can configure email alerts for
+  notifications.
+
+- **Alert Suppression:** Reduces noise from false positives. Rules
+  expire after six months or if criteria change.
+
+- **Automated Response:** Triggers Logic Apps for incident response
+  workflows (stakeholder notification, change management, remediation).
+
+- **Threat Intelligence Reports:** MDC analyses alerts to provide a
+  comprehensive view of attack campaigns, including attacker info,
+  objectives, tactics, IoCs, and mitigation.
+
+- **Security Analytics:** MDC uses integrated threat intelligence,
+  behavioural analytics, and anomaly detection.

@@ -1,3 +1,0 @@
-DeviceRegistryEvents
-| where RegistryKey contains "Run"
-| where ActionType == "RegistryValueSet"

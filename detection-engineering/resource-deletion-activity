@@ -1,2 +1,0 @@
-AzureActivity
-| where OperationNameValue contains "Delete"

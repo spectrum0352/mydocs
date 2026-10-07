@@ -1,0 +1,15 @@
+Approach to developing cloud security controls for a multi-cloud environment?
+	· Understand your existing infrastructure: Assess cloud providers used, data sensitivity, and compliance needs.
+	· Develop a unified strategy: Standardize security policies, IAM, data encryption, and network security across clouds.
+	· Leverage security tools: Use CSPM for visibility and SIEM for centralized monitoring.
+	· Automate and orchestrate: Automate security tasks and use IaC for consistent deployments.
+	· Continuous monitoring: Regularly monitor, conduct penetration testing, and update controls.
+
+
+Consideration when prioritizing security controls for different cloud services
+When prioritizing security controls for cloud services, consider these factors:
+	· Data Sensitivity: The more sensitive the data a service handles, the stronger the controls needed (e.g., encryption, access restrictions).
+	· Service Functionality: Prioritize controls for services with functionalities critical to security (e.g., identity management, key storage).
+	· Attack Surface: Services with a larger attack surface (exposed APIs, public interfaces) need more robust security measures.
+	· Compliance Requirements: Regulations governing the data type may dictate specific control priorities (e.g., PCI-DSS for financial data).
+Business Impact: A service critical to core operations deserves stronger controls to minimize potential disruption from a security breach.

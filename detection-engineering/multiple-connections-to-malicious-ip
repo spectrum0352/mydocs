@@ -1,3 +1,0 @@
-CommonSecurityLog
-| where ThreatIntelIndicator == "MaliciousIP"
-| summarize count() by SourceIP, DestinationIP

@@ -1,0 +1,3 @@
+DeviceProcessEvents
+| where FileName == "powershell.exe"
+| where ProcessCommandLine contains "EncodedCommand"

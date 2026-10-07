@@ -1,0 +1,4 @@
+SigninLogs
+| where ResultType == 0
+| summarize Locations = make_set(LocationDetails.countryOrRegion) by UserPrincipalName, bin(TimeGenerated, 1h)
+| where array_length(Locations) > 1

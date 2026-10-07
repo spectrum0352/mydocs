@@ -1,5 +1,0 @@
-# Network Routing
-
-
-## Routing tables
-

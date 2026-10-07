@@ -1,3 +1,0 @@
-AuditLogs
-| where OperationName contains "Add member to role"
-| where TargetResources contains "Global Administrator"
