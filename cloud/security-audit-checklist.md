@@ -1,11 +1,5 @@
 # Security audit checklist
 
-
-
-Here is a comprehensive Cloud Security Audit Checklist (400+ flat bullet points) covering multi-cloud (Azure, AWS, GCP), hybrid, containers, serverless, identity, data, network, DevSecOps, and governance.
-
-
-
 • Cloud security governance framework documented
 • Cloud security policies formally approved
 • Cloud risk register maintained
