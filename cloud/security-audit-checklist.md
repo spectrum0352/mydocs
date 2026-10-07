@@ -44,8 +44,46 @@
 - Secure Score monitored regularly
 - Security KPIs defined
 - Board-level security reporting implemented
-
-
+- Azure tenant security baseline documented
+- Azure tenant ID inventory maintained
+- Azure subscriptions inventory maintained
+- Management group hierarchy documented
+- Azure landing zone architecture documented
+- Azure policy governance model defined
+- Azure security strategy approved
+- Azure resource tagging policy enforced
+- Azure naming standards enforced
+- Azure region usage documented
+- Azure region restrictions enforced
+- Azure resource inventory automated
+- Azure cost anomaly monitoring enabled
+- Azure Secure Score reviewed monthly
+- Azure security responsibilities documented
+- Azure RBAC model documented
+- Azure break-glass accounts documented
+- Azure emergency access tested
+- Azure audit logs retained per policy
+- Azure AD audit logs enabled
+- Azure AD sign-in logs enabled
+- Azure activity logs retained 365+ days
+- Azure diagnostic settings enabled globally
+- Azure log centralization implemented
+- Azure Log Analytics workspace secured
+- Azure Monitor alerts configured
+- Azure Service Health alerts configured
+- Azure Advisor security recommendations reviewed
+- Azure resource locks implemented where required
+- Azure blueprints implemented
+- Azure environment separation enforced
+- Azure dev/test/prod segregation implemented
+- Azure production access restricted
+- Azure resource creation restricted
+- Azure public resource exposure reviewed
+- Azure default subscription permissions reviewed
+- Azure CSPM enabled
+- Azure Defender plans evaluated
+- Azure compliance dashboard reviewed
+- Azure regulatory compliance mapping completed
 
 ## Identity & Access Management
 
@@ -115,6 +153,47 @@
 - Abuse stale service principals with overprivileged roles.
 - Exploit shared keys (e.g., AzureWebJobsStorage) found in config files.
 - Enumerate users missing MFA using Microsoft Graph or AzureHound.
+- MFA enforced for all users
+- MFA enforced for privileged users
+- Conditional Access policies enforced
+- Legacy authentication disabled
+• Basic authentication disabled
+• Passwordless authentication enabled
+• Azure AD Identity Protection enabled
+• Risk-based conditional access configured
+• Impossible travel detection enabled
+• Privileged Identity Management enabled
+• Just-in-time role activation enabled
+• Global admin accounts minimized
+• Privileged roles reviewed quarterly
+• Guest user access reviewed quarterly
+• B2B collaboration policy defined
+• B2C configuration secured
+• Azure AD application registrations reviewed
+• Enterprise applications reviewed
+• OAuth consent restricted
+• Admin consent workflow defined
+• Service principals permissions reviewed
+• Managed identities used instead of secrets
+• App secrets expiration enforced
+• App certificates expiration enforced
+• Azure AD password policy enforced
+• Self-service password reset secured
+• Azure AD device compliance enforced
+• Azure AD join policy restricted
+• Hybrid identity sync secured
+• Azure AD Connect hardened
+• Azure AD Connect server restricted
+• Azure AD Connect admin access limited
+• Azure AD Connect staging mode documented
+• Azure AD audit logs monitored
+• Azure AD risky users monitored
+• Azure AD risky sign-ins monitored
+• Azure AD token lifetime configured
+• Azure AD external collaboration restrictions defined
+• Azure AD conditional access report-only mode reviewed
+
+
 
 ## NETWORK SECURITY
 These checks are inspired by AWS best practices but rewritten in the context of Azure environments. They help identify overly permissive networking configurations and logging gaps commonly targeted in lateral movement or external exposure.
@@ -415,93 +494,6 @@ These checks are inspired by AWS best practices but rewritten in the context of 
 - Data governance council established
 - Cloud roadmap aligned with security
 
-
-# documents and process
-
-Below is a 500+ Azure-specific cloud security audit checklist in flat bullet points only (no nesting, no grouping hierarchy).
-Designed for enterprise audit, SOC review, ISO/SOC2 evidence collection, and regulatory mapping.
-
-• Azure tenant security baseline documented
-• Azure tenant ID inventory maintained
-• Azure subscriptions inventory maintained
-• Management group hierarchy documented
-• Azure landing zone architecture documented
-• Azure policy governance model defined
-• Azure security strategy approved
-• Azure resource tagging policy enforced
-• Azure naming standards enforced
-• Azure region usage documented
-• Azure region restrictions enforced
-• Azure resource inventory automated
-• Azure cost anomaly monitoring enabled
-• Azure Secure Score reviewed monthly
-• Azure security responsibilities documented
-• Azure RBAC model documented
-• Azure break-glass accounts documented
-• Azure emergency access tested
-• Azure audit logs retained per policy
-• Azure AD audit logs enabled
-• Azure AD sign-in logs enabled
-• Azure activity logs retained 365+ days
-• Azure diagnostic settings enabled globally
-• Azure log centralization implemented
-• Azure Log Analytics workspace secured
-• Azure Monitor alerts configured
-• Azure Service Health alerts configured
-• Azure Advisor security recommendations reviewed
-• Azure resource locks implemented where required
-• Azure blueprints implemented
-• Azure environment separation enforced
-• Azure dev/test/prod segregation implemented
-• Azure production access restricted
-• Azure resource creation restricted
-• Azure public resource exposure reviewed
-• Azure default subscription permissions reviewed
-• Azure CSPM enabled
-• Azure Defender plans evaluated
-• Azure compliance dashboard reviewed
-• Azure regulatory compliance mapping completed
-
-## ENTRA ID SECURITY
-• MFA enforced for all users
-• MFA enforced for privileged users
-• Conditional Access policies enforced
-• Legacy authentication disabled
-• Basic authentication disabled
-• Passwordless authentication enabled
-• Azure AD Identity Protection enabled
-• Risk-based conditional access configured
-• Impossible travel detection enabled
-• Privileged Identity Management enabled
-• Just-in-time role activation enabled
-• Global admin accounts minimized
-• Privileged roles reviewed quarterly
-• Guest user access reviewed quarterly
-• B2B collaboration policy defined
-• B2C configuration secured
-• Azure AD application registrations reviewed
-• Enterprise applications reviewed
-• OAuth consent restricted
-• Admin consent workflow defined
-• Service principals permissions reviewed
-• Managed identities used instead of secrets
-• App secrets expiration enforced
-• App certificates expiration enforced
-• Azure AD password policy enforced
-• Self-service password reset secured
-• Azure AD device compliance enforced
-• Azure AD join policy restricted
-• Hybrid identity sync secured
-• Azure AD Connect hardened
-• Azure AD Connect server restricted
-• Azure AD Connect admin access limited
-• Azure AD Connect staging mode documented
-• Azure AD audit logs monitored
-• Azure AD risky users monitored
-• Azure AD risky sign-ins monitored
-• Azure AD token lifetime configured
-• Azure AD external collaboration restrictions defined
-• Azure AD conditional access report-only mode reviewed
 
 ## NETWORK SECURITY
 
