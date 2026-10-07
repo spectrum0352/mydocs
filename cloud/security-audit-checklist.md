@@ -94,250 +94,216 @@
 
 
 
-# NETWORK SECURITY
+## NETWORK SECURITY
+
+- All VMs deployed without public IP by default
+- Network segmentation implemented
+- Subnet design documented
+- NSGs applied to all subnets
+- Firewall deployed centrally
+- WAF deployed for internet-facing apps
+- DDoS protection enabled
+- Private endpoints used for PaaS
+- Storage accounts restricted to private access
+- SQL databases restricted to private access
+- Cosmos DB restricted to private access
+- Bastion host used for admin access
+- No direct RDP from internet
+- No direct SSH from internet
+- Inbound ports restricted
+- Outbound traffic filtering implemented
+- Egress monitoring implemented
+- TLS 1.2+ enforced
+- Weak ciphers disabled
+- VPN security configured
+- ExpressRoute security reviewed
+- Peering rules reviewed
+- VNet flow logs enabled
+- Network logging retained
+- IDS/IPS enabled
+- DNS logging enabled
+- DNS filtering implemented
+- Public endpoints inventory maintained
+- Load balancer security reviewed
+- Reverse proxy configured
+- Network microsegmentation implemented
+- East-west traffic visibility enabled
+- Zero Trust network model implemented
+- API gateway deployed
+- Rate limiting configured
+- Geo-blocking configured
+- Secure ingress controller configured
+- Firewall rule review conducted quarterly
+
+## DATA SECURITY
+
+- Encryption at rest enabled
+- Encryption in transit enforced
+- Customer-managed keys used for sensitive data
+- Key rotation enabled
+- Key vault soft delete enabled
+- Key vault purge protection enabled
+- Secrets not stored in code
+- No secrets in pipelines
+- Backup encryption enabled
+- Backup storage access restricted
+- Database TDE enabled
+- Storage versioning enabled
+- Data loss prevention implemented
+- Sensitive data discovery conducted
+- Data masking enabled
+- Database auditing enabled
+- File integrity monitoring enabled
+- Data exfiltration detection enabled
+- Data classification labels applied
+- GDPR requirements mapped
+- HIPAA controls validated
+- Data residency verified
+- Cross-border data transfers documented
+- Secure file transfer mechanisms used
+- Storage firewall enabled
+- Immutable backups configured
+- Snapshot encryption verified
+- Blob public access disabled
+- Object storage ACLs reviewed
+- Log retention policy defined
+
+## WORKLOAD SECURITY
+
+- Defender for Servers enabled.
+- Vulnerability scanning enabled
+- Critical patches applied
+- Patch management automated
+- EDR agent deployed
+- Anti-malware enabled
+- Host-based firewall enabled
+- Disk encryption enabled
+- Secure boot enabled
+- VM extensions reviewed
+- Container runtime security enabled
+- Kubernetes RBAC configured
+- Kubernetes API access restricted
+- Container image scanning enabled
+- Only trusted registries used
+- Container secrets not hardcoded
+- Pod security policies implemented
+- Admission controllers enabled
+- Node auto-scaling secured
+- Serverless functions secured
+- Serverless permissions least privilege
+- Code signing implemented
+- Runtime monitoring enabled
+- Immutable infrastructure approach used
+- Golden image baseline defined
+- Image hardening standards enforced
+- Infrastructure as Code security scanning enabled
+
+## APPLICATION SECURITY
+
+- Secure SDLC implemented
+- Threat modeling performed
+- Code review enforced
+- Static code analysis enabled
+- Dynamic testing enabled
+- Software composition analysis enabled
+- Dependency vulnerability scanning enabled
+- Secrets scanning enabled
+- API authentication enforced
+- Input validation implemented
+- Output encoding implemented
+- Secure session management implemented
+- CSRF protection implemented
+- XSS protection implemented
+- SQL injection protection implemented
+- API rate limiting implemented
+- API schema validation enabled
+- API gateway logging enabled
+- App insights logging enabled
+- WAF rules tuned
+- Secure headers implemented
+- OAuth securely configured
+- Token validation implemented
+
+## MONITORING & DETECTION
+
+- Centralized logging enabled
+- SIEM integrated
+- UEBA enabled
+- SOAR playbooks created
+- Alert severity defined
+- False positives reviewed
+- Threat intelligence feeds integrated
+- Cloud activity logs retained
+- Storage logs enabled
+- Key vault logs enabled
+- SQL audit logs enabled
+- Network flow logs enabled
+- Incident triage process defined
+- Incident SLA defined
+- Forensic logging enabled
+- Time synchronization configured
+- Alert tuning conducted quarterly
+- Insider threat monitoring enabled
+- Privilege escalation alerts configured
+- Suspicious API call alerts configured
+- Impossible login alerts configured
+- Threat hunting program implemented
+
+## DEVSECOPS
+
+- IaC scanning implemented
+- Pipeline secrets secured
+- Build agents hardened
+- Artifact repository secured
+- Deployment approvals enforced
+- Production deployment restricted
+- Environment separation enforced
+- CI/CD RBAC enforced
+- Container registry scanning enabled
+- Code integrity validation implemented
+- Secure rollback mechanism implemented
+- Dev/test environment isolated
+- Supply chain attack prevention implemented
+
+## BACKUP & DR
+
+- Backup schedule documented
+- Backup encryption verified
+- Backup retention policy defined
+- Backup access restricted
+- Restore testing performed
+- Geo-redundant backups configured
+- Ransomware recovery tested
+- Immutable backup enabled
+- DR drill conducted annually
+
+## MULTI-CLOUD & HYBRID
+
+- Azure Arc configured
+- AWS accounts monitored
+- GCP projects monitored
+- Cross-cloud IAM reviewed
+- Cross-cloud logging centralized
+- Multi-cloud posture management enabled
+- Unified incident response defined
+- Cross-cloud risk dashboard implemented
+
+## API \& SOA SECURITY
+
+- API inventory maintained
+- API authentication enforced
+- API gateway configured
+- Service mesh encryption enabled
+- mTLS enabled
+- API rate limiting enforced
+- SOAP security configured
+- XML validation enabled
+- JWT securely configured
+- Token expiration enforced
 
 
 
-• All VMs deployed without public IP by default
-• Network segmentation implemented
-• Subnet design documented
-• NSGs applied to all subnets
-• Firewall deployed centrally
-• WAF deployed for internet-facing apps
-• DDoS protection enabled
-• Private endpoints used for PaaS
-• Storage accounts restricted to private access
-• SQL databases restricted to private access
-• Cosmos DB restricted to private access
-• Bastion host used for admin access
-• No direct RDP from internet
-• No direct SSH from internet
-• Inbound ports restricted
-• Outbound traffic filtering implemented
-• Egress monitoring implemented
-• TLS 1.2+ enforced
-• Weak ciphers disabled
-• VPN security configured
-• ExpressRoute security reviewed
-• Peering rules reviewed
-• VNet flow logs enabled
-• Network logging retained
-• IDS/IPS enabled
-• DNS logging enabled
-• DNS filtering implemented
-• Public endpoints inventory maintained
-• Load balancer security reviewed
-• Reverse proxy configured
-• Network microsegmentation implemented
-• East-west traffic visibility enabled
-• Zero Trust network model implemented
-• API gateway deployed
-• Rate limiting configured
-• Geo-blocking configured
-• Secure ingress controller configured
-• Firewall rule review conducted quarterly
-
-
-
-# DATA SECURITY
-
-
-
-• Encryption at rest enabled
-• Encryption in transit enforced
-• Customer-managed keys used for sensitive data
-• Key rotation enabled
-• Key vault soft delete enabled
-• Key vault purge protection enabled
-• Secrets not stored in code
-• No secrets in pipelines
-• Backup encryption enabled
-• Backup storage access restricted
-• Database TDE enabled
-• Storage versioning enabled
-• Data loss prevention implemented
-• Sensitive data discovery conducted
-• Data masking enabled
-• Database auditing enabled
-• File integrity monitoring enabled
-• Data exfiltration detection enabled
-• Data classification labels applied
-• GDPR requirements mapped
-• HIPAA controls validated
-• Data residency verified
-• Cross-border data transfers documented
-• Secure file transfer mechanisms used
-• Storage firewall enabled
-• Immutable backups configured
-• Snapshot encryption verified
-• Blob public access disabled
-• Object storage ACLs reviewed
-• Log retention policy defined
-
-
-
-# WORKLOAD SECURITY
-
-
-
-• Defender for Servers enabled
-• Vulnerability scanning enabled
-• Critical patches applied
-• Patch management automated
-• EDR agent deployed
-• Anti-malware enabled
-• Host-based firewall enabled
-• Disk encryption enabled
-• Secure boot enabled
-• VM extensions reviewed
-• Container runtime security enabled
-• Kubernetes RBAC configured
-• Kubernetes API access restricted
-• Container image scanning enabled
-• Only trusted registries used
-• Container secrets not hardcoded
-• Pod security policies implemented
-• Admission controllers enabled
-• Node auto-scaling secured
-• Serverless functions secured
-• Serverless permissions least privilege
-• Code signing implemented
-• Runtime monitoring enabled
-• Immutable infrastructure approach used
-• Golden image baseline defined
-• Image hardening standards enforced
-• Infrastructure as Code security scanning enabled
-
-
-
-# APPLICATION SECURITY
-
-
-
-• Secure SDLC implemented
-• Threat modeling performed
-• Code review enforced
-• Static code analysis enabled
-• Dynamic testing enabled
-• Software composition analysis enabled
-• Dependency vulnerability scanning enabled
-• Secrets scanning enabled
-• API authentication enforced
-• Input validation implemented
-• Output encoding implemented
-• Secure session management implemented
-• CSRF protection implemented
-• XSS protection implemented
-• SQL injection protection implemented
-• API rate limiting implemented
-• API schema validation enabled
-• API gateway logging enabled
-• App insights logging enabled
-• WAF rules tuned
-• Secure headers implemented
-• OAuth securely configured
-• Token validation implemented
-
-
-
-# MONITORING \& DETECTION
-
-
-
-• Centralized logging enabled
-• SIEM integrated
-• UEBA enabled
-• SOAR playbooks created
-• Alert severity defined
-• False positives reviewed
-• Threat intelligence feeds integrated
-• Cloud activity logs retained
-• Storage logs enabled
-• Key vault logs enabled
-• SQL audit logs enabled
-• Network flow logs enabled
-• Incident triage process defined
-• Incident SLA defined
-• Forensic logging enabled
-• Time synchronization configured
-• Alert tuning conducted quarterly
-• Insider threat monitoring enabled
-• Privilege escalation alerts configured
-• Suspicious API call alerts configured
-• Impossible login alerts configured
-• Threat hunting program implemented
-
-
-
-# DEVSECOPS
-
-
-
-• IaC scanning implemented
-• Pipeline secrets secured
-• Build agents hardened
-• Artifact repository secured
-• Deployment approvals enforced
-• Production deployment restricted
-• Environment separation enforced
-• CI/CD RBAC enforced
-• Container registry scanning enabled
-• Code integrity validation implemented
-• Secure rollback mechanism implemented
-• Dev/test environment isolated
-• Supply chain attack prevention implemented
-
-
-
-# BACKUP \& DR
-
-
-
-• Backup schedule documented
-• Backup encryption verified
-• Backup retention policy defined
-• Backup access restricted
-• Restore testing performed
-• Geo-redundant backups configured
-• Ransomware recovery tested
-• Immutable backup enabled
-• DR drill conducted annually
-
-
-
-# MULTI-CLOUD \& HYBRID
-
-
-
-• Azure Arc configured
-• AWS accounts monitored
-• GCP projects monitored
-• Cross-cloud IAM reviewed
-• Cross-cloud logging centralized
-• Multi-cloud posture management enabled
-• Unified incident response defined
-• Cross-cloud risk dashboard implemented
-
-
-
-# API \& SOA SECURITY
-
-
-
-• API inventory maintained
-• API authentication enforced
-• API gateway configured
-• Service mesh encryption enabled
-• mTLS enabled
-• API rate limiting enforced
-• SOAP security configured
-• XML validation enabled
-• JWT securely configured
-• Token expiration enforced
-
-
-
-# ENDPOINT \& DEVICE SECURITY
+## ENDPOINT \& DEVICE SECURITY
 
 
 
@@ -348,11 +314,7 @@
 • Jailbroken devices blocked
 • Unmanaged devices restricted
 
-
-
-ADDITIONAL ADVANCED CONTROLS
-
-===
+## ADDITIONAL ADVANCED CONTROLS
 
 • Zero Trust maturity assessed
 • Cloud security posture reviewed monthly
@@ -369,10 +331,10 @@ ADDITIONAL ADVANCED CONTROLS
 • Data governance council established
 • Cloud roadmap aligned with security
 
+# Azure Security Audit Playbook
 
+## 1. Identity & Access Management (IAM)
 
-Azure Security Audit Playbook
-1. Identity & Access Management (IAM)
 Inspired by AWS Zeus audit principles, these Azure-specific checks focus on misconfigurations and weak identity practices that red teams should target or defenders should harden.
 Ensure no use of the Azure subscription Owner account
 Enforce MFA on all users with portal access
@@ -401,7 +363,9 @@ Attempt login with legacy protocols (MFA bypass).
 Abuse stale service principals with overprivileged roles.
 Exploit shared keys (e.g., AzureWebJobsStorage) found in config files.
 Enumerate users missing MFA using Microsoft Graph or AzureHound.
-2. Networking
+
+## 2. Networking
+
 These checks are inspired by AWS best practices but rewritten in the context of Azure environments. They help identify overly permissive networking configurations and logging gaps commonly targeted in lateral movement or external exposure.
 Deny inbound traffic on ports 22/3389 from 0.0.0.0/0 in all NSGs
 Enable NSG Flow Logs across all Network Security Groups
@@ -415,7 +379,8 @@ Ensure Network Watcher Flow Logs are enabled for all NSGs	Azure CLI	az network w
 Ensure default NSGs (or unassociated ones) deny all inbound traffic by default	Azure CLI	az network nsg rule list --resource-group <rg> --nsg-name <nsg>	Default NSGs should not have allow-all inbound rules
 Ensure Subnet NSG association is correct and restricts public traffic	Azure CLI	az network vnet subnet show --vnet-name <vnet> --name <subnet>	NSG should be associated and configured for least privilege
 Ensure Public IP addresses are not assigned directly to critical VMs unless required	Azure CLI	az vm list-ip-addresses --output table	Critical VMs should not expose public IPs unnecessarily
-3. Logging & Diagnostic Settings
+
+## 3. Logging & Diagnostic Settings
 Enable diagnostic logs on all critical services (Key Vault, SQL, Storage, etc.)
 Ensure logs are sent to Log Analytics / Event Hub / Storage
 Use customer-managed keys (CMKs) and enable key rotation
@@ -429,7 +394,6 @@ Ensure log encryption: Use customer-managed keys (CMKs) with Azure Key Vault to 
 Enable key rotation for CMKs: Ensure key rotation is enabled for all CMKs used to encrypt logs via Key Vault.
 Enable logging on critical services: Enable resource-specific logs (e.g., for Key Vault, Storage, VMs, App Services, Cosmos DB) via Diagnostic Settings.
 Enable Azure Policy enforcement: Use built-in Azure Policy definitions to enforce diagnostic logging across services.
-
 Check	Tool	Command	Expected Result
 Ensure Activity Logs are enabled for all subscriptions	Azure CLI	az monitor activity-log list --max-events 1	Recent activity logs are returned
 Ensure Diagnostic Settings are configured on key resources	Azure CLI	az monitor diagnostic-settings list --resource <resource-id>	Log destinations like Log Analytics or Storage are set
@@ -445,7 +409,9 @@ Check if logging is disabled or misconfigured across services.
 Attempt deletion of logs from improperly secured storage.
 Test if sensitive operations (e.g., role assignments, key access) are logged.
 Try to identify gaps in log coverage (e.g., no logs for VMs or SQL).
-4. Monitoring & Alerting
+
+##  4. Monitoring & Alerting
+
 Configure alerts on:
 Unauthorized API calls (403/401)
 Non-MFA sign-ins to portal
@@ -477,7 +443,7 @@ Billing and Contact integrity
 Enable Cost Management Alerts: Set up budgets and alerts for cost spikes.
 Maintain Updated Contact Info: Ensure organization’s billing and technical contacts are current.
 
-# 🛡 AZURE SECURITY AUDIT CHECKLIST (500+ CONTROLS)
+# documents and process
 
 Below is a 500+ Azure-specific cloud security audit checklist in flat bullet points only (no nesting, no grouping hierarchy).
 Designed for enterprise audit, SOC review, ISO/SOC2 evidence collection, and regulatory mapping.
@@ -523,7 +489,7 @@ Designed for enterprise audit, SOC review, ISO/SOC2 evidence collection, and reg
 • Azure compliance dashboard reviewed
 • Azure regulatory compliance mapping completed
 
-AZURE AD / ENTRA ID SECURITY
+## ENTRA ID SECURITY
 • MFA enforced for all users
 • MFA enforced for privileged users
 • Conditional Access policies enforced
@@ -564,7 +530,8 @@ AZURE AD / ENTRA ID SECURITY
 • Azure AD external collaboration restrictions defined
 • Azure AD conditional access report-only mode reviewed
 
-NETWORK SECURITY
+## NETWORK SECURITY
+
 • Azure VNets documented
 • Subnet segmentation implemented
 • NSGs applied to all subnets
@@ -606,7 +573,8 @@ NETWORK SECURITY
 • Zero Trust network approach implemented
 • Admin access IP restrictions enforced
 
-COMPUTE SECURITY
+## COMPUTE SECURITY
+
 • Defender for Servers Plan 2 enabled
 • VM vulnerability scanning enabled
 • VM patch management automated
@@ -628,7 +596,8 @@ COMPUTE SECURITY
 • File integrity monitoring enabled
 • VM resource locks implemented
 
-STORAGE SECURITY
+## STORAGE SECURITY
+
 • Storage account public access disabled
 • Blob anonymous access disabled
 • Storage firewall enabled
@@ -647,7 +616,8 @@ STORAGE SECURITY
 • Storage lifecycle policies configured
 • Cross-region replication configured securely
 
-DATABASE SECURITY
+## DATABASE SECURITY
+
 • Azure SQL TDE enabled
 • Azure SQL auditing enabled
 • Azure SQL threat detection enabled
@@ -666,7 +636,8 @@ DATABASE SECURITY
 • DB long-term retention configured
 • Geo-replication secured
 
-KEY VAULT SECURITY
+## KEY VAULT SECURITY
+
 • Key Vault RBAC enabled
 • Access policies minimized
 • Key Vault firewall enabled
@@ -679,7 +650,8 @@ KEY VAULT SECURITY
 • Key Vault logging enabled
 • Key Vault access review conducted
 
-CONTAINER \& AKS SECURITY
+## CONTAINER & AKS SECURITY
+
 • AKS RBAC enabled
 • AKS Azure AD integration enabled
 • Kubernetes API server restricted
@@ -695,7 +667,8 @@ CONTAINER \& AKS SECURITY
 • AKS monitoring enabled
 • AKS logs integrated with SIEM
 
-SERVERLESS SECURITY
+## SERVERLESS SECURITY
+
 • Azure Functions authentication enabled
 • Function app HTTPS enforced
 • Function app private endpoint enabled
@@ -706,7 +679,8 @@ SERVERLESS SECURITY
 • Service Bus firewall enabled
 • Service Bus encryption enabled
 
-MONITORING \& INCIDENT RESPONSE
+## MONITORING & INCIDENT RESPONSE
+
 • Microsoft Sentinel deployed
 • Sentinel data connectors enabled
 • UEBA enabled
@@ -720,7 +694,8 @@ MONITORING \& INCIDENT RESPONSE
 • Forensic data retention defined
 • Time sync configured
 
-DEVSECOPS
+## DEVSECOPS
+
 • Azure DevOps RBAC enforced
 • Pipeline secrets secured
 • Key Vault integrated in pipelines
@@ -732,7 +707,8 @@ DEVSECOPS
 • Code scanning enabled
 • Dependency scanning enabled
 
-BACKUP \& DR
+## BACKUP & DR
+
 • Azure Backup enabled
 • Backup vault secured
 • Soft delete for backups enabled
@@ -741,7 +717,8 @@ BACKUP \& DR
 • Site Recovery configured
 • Cross-region failover tested
 
-GOVERNANCE \& COMPLIANCE
+## GOVERNANCE & COMPLIANCE
+
 • Azure Policy assigned at management group
 • Deny policies implemented
 • Audit policies implemented
@@ -751,7 +728,8 @@ GOVERNANCE \& COMPLIANCE
 • Resource compliance monitored
 • Non-compliant resources remediated
 
-ADVANCED SECURITY CONTROLS
+## ADVANCED SECURITY CONTROLS
+
 • Zero Trust maturity assessed
 • Identity attack path analysis performed
 • Defender exposure management reviewed
