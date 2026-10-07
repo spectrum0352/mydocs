@@ -1,98 +1,96 @@
 # Security audit checklist
 
+## Documentation and Processes
 - Cloud security governance framework documented
 - Cloud security policies formally approved
 - Cloud risk register maintained
 - Cloud shared responsibility model documented
-• Roles and responsibilities clearly defined
-• Cloud security strategy aligned with business objectives
-• Data classification policy implemented
-• Cloud security architecture documented
-• Cloud threat model documented
-• Cloud asset inventory maintained
-• Cloud account/subscription inventory maintained
-• All cloud regions documented
-• Approved cloud services catalog maintained
-• Cloud onboarding process documented
-• Cloud offboarding process documented
-• Cloud change management process defined
-• Cloud security exception process defined
-• Security baseline standards defined
-• Secure build standards documented
-• Secure configuration baselines implemented
-• CIS benchmark alignment verified
-• Regulatory compliance mapping completed
-• Cloud provider compliance certifications reviewed
-• Cloud SLA reviewed for security clauses
-• Vendor risk assessment completed
-• Third-party access documented
-• Third-party security agreements signed
-• Cloud penetration testing conducted annually
-• Cloud security awareness training conducted
-• Incident response plan documented
-• Cloud incident response runbooks created
-• Forensic readiness plan documented
-• Legal hold procedures documented
-• Data retention policy enforced
-• Data destruction procedures documented
-• Disaster recovery plan documented
-• Business continuity plan tested
-• RTO defined per application
-• RPO defined per application
-• Backup testing performed
-• Secure Score monitored regularly
-• Security KPIs defined
-• Board-level security reporting implemented
+- Roles and responsibilities clearly defined
+- Cloud security strategy aligned with business objectives
+- Data classification policy implemented
+- Cloud security architecture documented
+- Cloud threat model documented
+- Cloud asset inventory maintained
+- Cloud account/subscription inventory maintained
+- All cloud regions documented
+- Approved cloud services catalog maintained
+- Cloud onboarding process documented
+- Cloud offboarding process documented
+- Cloud change management process defined
+- Cloud security exception process defined
+- Security baseline standards defined
+- Secure build standards documented
+- Secure configuration baselines implemented
+- CIS benchmark alignment verified
+- Regulatory compliance mapping completed
+- Cloud provider compliance certifications reviewed
+- Cloud SLA reviewed for security clauses
+- Vendor risk assessment completed
+- Third-party access documented
+- Third-party security agreements signed
+- Cloud penetration testing conducted annually
+- Cloud security awareness training conducted
+- Incident response plan documented
+- Cloud incident response runbooks created
+- Forensic readiness plan documented
+- Legal hold procedures documented
+- Data retention policy enforced
+- Data destruction procedures documented
+- Disaster recovery plan documented
+- Business continuity plan tested
+- RTO defined per application
+- RPO defined per application
+- Backup testing performed
+- Secure Score monitored regularly
+- Security KPIs defined
+- Board-level security reporting implemented
 
 
 
-# IDENTITY \& ACCESS MANAGEMENT
+## Identity & Access Management
 
-
-
-• MFA enforced for all users
-• MFA enforced for all admins
-• Conditional access policies defined
-• Identity federation documented
-• Privileged accounts separated
-• No shared admin accounts
-• Privileged Identity Management enabled
-• Just-in-time admin access enabled
-• Password policy enforced
-• Passwordless authentication enabled where possible
-• Legacy authentication disabled
-• Service accounts inventoried
-• Service account permissions reviewed
-• Managed identities used instead of credentials
-• Access keys rotation policy defined
-• API keys rotated regularly
-• OAuth applications reviewed
-• OAuth consent policies enforced
-• Admin consent workflow defined
-• Guest access reviewed
-• B2B access reviewed
-• External identity lifecycle managed
-• Stale accounts disabled
-• Dormant accounts removed
-• Emergency access accounts secured
-• Break-glass accounts monitored
-• RBAC implemented using least privilege
-• No wildcard permissions in IAM policies
-• AWS IAM roles reviewed
-• Azure role assignments reviewed
-• GCP IAM bindings reviewed
-• Identity logs integrated with SIEM
-• Identity risk detection enabled
-• Impossible travel detection enabled
-• Login anomaly detection enabled
-• Session timeout configured
-• Token lifetime configured
-• Device compliance required for access
-• Endpoint compliance integrated with access
-• Admin portal access restricted
-• Conditional access location-based policies implemented
-• Risk-based authentication implemented
-• Identity protection alerts monitored
+- MFA enforced for all users
+- MFA enforced for all admins
+- Conditional access policies defined
+- Identity federation documented
+- Privileged accounts separated
+- No shared admin accounts
+- Privileged Identity Management enabled
+- Just-in-time admin access enabled
+- Password policy enforced
+- Passwordless authentication enabled where possible
+- Legacy authentication disabled
+- Service accounts inventoried
+- Service account permissions reviewed
+- Managed identities used instead of credentials
+- Access keys rotation policy defined
+- API keys rotated regularly
+- OAuth applications reviewed
+- OAuth consent policies enforced
+- Admin consent workflow defined
+- Guest access reviewed
+- B2B access reviewed
+- External identity lifecycle managed
+- Stale accounts disabled
+- Dormant accounts removed
+- Emergency access accounts secured
+- Break-glass accounts monitored
+- RBAC implemented using least privilege
+- No wildcard permissions in IAM policies
+- Azure role assignments reviewed
+- GCP IAM bindings reviewed
+- Identity logs integrated with SIEM
+- Identity risk detection enabled
+- Impossible travel detection enabled
+- Login anomaly detection enabled
+- Session timeout configured
+- Token lifetime configured
+- Device compliance required for access
+- Endpoint compliance integrated with access
+- Admin portal access restricted
+- Conditional access location-based policies implemented
+- Risk-based authentication implemented
+- Identity protection alerts monitored
 
 
 
