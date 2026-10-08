@@ -6,7 +6,7 @@
 
 
 
-###### **What mitigations and access controls prevent attackers from exfiltrating sensitive data from legacy SQL Server?**
+#### **What mitigations and access controls prevent attackers from exfiltrating sensitive data from legacy SQL Server?**
 
 
 
@@ -14,7 +14,7 @@ or
 
 
 
-###### **How can we prevent unauthorized access to sensitive data in a legacy SQL Server instance that lacks native Dynamic Data Masking?**
+#### **How can we prevent unauthorized access to sensitive data in a legacy SQL Server instance that lacks native Dynamic Data Masking?**
 
 
 
@@ -22,7 +22,7 @@ or
 
 
 
-###### **If we have legacy SQL server installed on Azure Virtual machines, then there is not data masking feature. Now how would you prevent the attacker from seeing or accessing the sensitive data in SQL server?**
+#### **If we have legacy SQL server installed on Azure Virtual machines, then there is not data masking feature. Now how would you prevent the attacker from seeing or accessing the sensitive data in SQL server?**
 
 
 
