@@ -1,12 +1,11 @@
-
-
 Projects
 
 Cloud Products (SAAS, IAAS) Marketplace
 
 •	- Worked as lead developer and Associate Architect for a B2B Marketplace platform offering cloud products and subscriptions (SAAS and IAAS).
-- Developed various modules (SOA) including, Marketplace, Recurring Billing, White label, Integrations with various Vendors (Fortune 100 Technology vendors) and Re-sellers.
-- Migration to MSA (Microservices).
+
+* Developed various modules (SOA) including, Marketplace, Recurring Billing, White label, Integrations with various Vendors (Fortune 100 Technology vendors) and Re-sellers.
+* Migration to MSA (Microservices).
 •	Client - B2B Marketplace - Fortune company.
 Apr 2014 - Present
 Responsibilities:
@@ -17,40 +16,41 @@ Responsibilities:
 * Tools : Kubernetes, Docker, Azure DevOps, Azure Cloud (AKS, App gateway, Storage, App insights, KeyVault, Event Grid, VM, App Service) , Terraform, Packer.
 
 
-- Define Enterprise Web App Architecture.
-- Adhere to agile development using scrum framework.
-- Analysis of systems which need high level of technical competency. 
-- Lead team of system analysts to implement various modules/sub-systems of web app.
-- Assist Program Managers, Development Managers in release and deployment.
-- Migrate legacy system to next gen technologies.
-- Assisting and Mentoring Team.
-- Initiate and help creating documentation - Functional, Technical, User Guides, Api Integration Guides.
-- Coding and Review.
-- DB design and Data dictionary creation.
-- Code and DB Optimization.
-- Closely work with DevOps to achieve CI/CD.
-- Trainer and Mentor. (Project and Org. level).
-- Follow and Research applicable trends.
-- Design and Implement Cloud infrastructure for flagship PaaS solution for fortune 100 enterprise.
-- Lead DevOps team.
-- Mentor creation of CI/CD pipelines for all environments.
-- POC creation and take decision to choose right solutions/tools.
-- Make sure solutions are High available, resilient, monitored, scalable, secured.
-- Implement security as suggested by the Security Team. CIS Hardening, effective Network Access restrictions.
-- Develop cloud native applications for fortune 100 enterprise.
-- Manage and monitor teams during all phase of development.
-- Contribute and assist Enterprise Architects to design architecture of enterprise web applications.
-- Liaison between Product Specialists (Business Analysts) and technical teams to deliver features/enhancements timely.
-- Migrate Legacy Enterprise Web Architecture to Cloud. (AWS).
-- Convert business ideas into technical documents.
-- RCA of issues affecting customer satisfaction budget.
-- Conduct (Agile) Scrum, Scrum of Scrum, Sprint Planning, Planning poker and Retrospective meetings. 
-- Coordinate cross-project activities.
-- Lead, Mentor and evaluate teams.
-- Executive reporting (Product owners and Stakeholders).
-- Report project KPIs.
-- Implementing best practices for Coding, Code review and deployments.
-- Change and Release management.
+
+* Define Enterprise Web App Architecture.
+* Adhere to agile development using scrum framework.
+* Analysis of systems which need high level of technical competency.
+* Lead team of system analysts to implement various modules/sub-systems of web app.
+* Assist Program Managers, Development Managers in release and deployment.
+* Migrate legacy system to next gen technologies.
+* Assisting and Mentoring Team.
+* Initiate and help creating documentation - Functional, Technical, User Guides, Api Integration Guides.
+* Coding and Review.
+* DB design and Data dictionary creation.
+* Code and DB Optimization.
+* Closely work with DevOps to achieve CI/CD.
+* Trainer and Mentor. (Project and Org. level).
+* Follow and Research applicable trends.
+* Design and Implement Cloud infrastructure for flagship PaaS solution for fortune 100 enterprise.
+* Lead DevOps team.
+* Mentor creation of CI/CD pipelines for all environments.
+* POC creation and take decision to choose right solutions/tools.
+* Make sure solutions are High available, resilient, monitored, scalable, secured.
+* Implement security as suggested by the Security Team. CIS Hardening, effective Network Access restrictions.
+* Develop cloud native applications for fortune 100 enterprise.
+* Manage and monitor teams during all phase of development.
+* Contribute and assist Enterprise Architects to design architecture of enterprise web applications.
+* Liaison between Product Specialists (Business Analysts) and technical teams to deliver features/enhancements timely.
+* Migrate Legacy Enterprise Web Architecture to Cloud. (AWS).
+* Convert business ideas into technical documents.
+* RCA of issues affecting customer satisfaction budget.
+* Conduct (Agile) Scrum, Scrum of Scrum, Sprint Planning, Planning poker and Retrospective meetings.
+* Coordinate cross-project activities.
+* Lead, Mentor and evaluate teams.
+* Executive reporting (Product owners and Stakeholders).
+* Report project KPIs.
+* Implementing best practices for Coding, Code review and deployments.
+* Change and Release management.
 
 I have web application deployed in azure kubernetes. how do I design the security architecture for this? please share the detailed list of security controls we need to implement?
 
@@ -94,5 +94,52 @@ Additional Considerations
 •	Regular Security Assessments: Conduct regular security assessments and audits.
 By implementing these security controls and following best practices, you can significantly enhance the security posture of your web application deployed on AKS.
 Would you like to focus on a specific area or have any other questions?
+
+
+
+
+
+6️⃣ What would be your priorities as a new Cloud Security Engineer?
+If replacing someone fired for incompetence:
+
+Phase 1 – Immediate Risk Reduction (First 30 Days)
+Review IAM \& Global Admin access
+
+Enable MFA everywhere
+
+Check public exposure of storage \& VMs
+
+Review Defender Secure Score
+
+Validate logging coverage
+
+Check backup \& DR status
+
+Assess Key Vault configuration
+
+Phase 2 – Visibility \& Governance (60 Days)
+Centralize logging in Sentinel
+
+Enable Defender plans
+
+Conduct vulnerability scans
+
+Review NSG and firewall rules
+
+Audit service principals
+
+Implement PIM
+
+Phase 3 – Strategic Hardening (90 Days)
+Zero Trust architecture
+
+Threat hunting program
+
+Automation via SOAR
+
+Incident response playbooks
+
+Red team simulation
+
 
 
