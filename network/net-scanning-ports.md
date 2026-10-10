@@ -2,6 +2,14 @@
 
 The following scripts automate common reconnaissance activities during **authorized Azure security assessments**. Ensure you have **written authorization** before running these scripts against any target.
 
+Port Scanning:
+What is Port Scanning?
+Port Scanning is the technique used to identify open ports and service available on a host. Hackers use port scanning to find information that can be helpful to exploit vulnerabilities. Administrators use Port Scanning to verify the security policies of the network. Some of the common Port Scanning Techniques are:
+Ping Scan
+TCP Half-Open
+TCP Connect
+UDP
+Stealth Scanning
 ---
 
 ## 1. Scan for Open Ports on Azure-Hosted Services

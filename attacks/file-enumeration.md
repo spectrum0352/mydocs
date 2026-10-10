@@ -1,0 +1,1 @@
+Explain the Term “File Enumeration”: File enumeration, as its name implies, is the process of shedding lighter on the files within a database. It gives the organization and the ethical hacker a complete description, function, location, and the type of data within a system.

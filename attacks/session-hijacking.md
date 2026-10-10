@@ -1,0 +1,1 @@
+Explain the concept of session hijacking: TCP session hijacking is the misuse of a valid computer session. IP spoofing is the most common method of session hijacking. In this method, attackers use IP packets to insert a command between two nodes of the network.

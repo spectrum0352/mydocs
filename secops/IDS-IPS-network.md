@@ -5,8 +5,8 @@ Passive device that detect anomalies.
 Network Intrusion Prevention Systems (NIPS)
 Active device that detect and prevents when something on the network traffic is suspicious by blocking it.
 55 of 178
-�
-� Attacks could be in the form of malformed network traffic or excessive amounts of traffic.
+
+ Attacks could be in the form of malformed network traffic or excessive amounts of traffic.
 Prevention vs. Detection
 Detection
 NIDS is a passive device and focuses on detection alone, making it a detection control. It detects network traffic
@@ -17,6 +17,7 @@ things from router)
 Identification technologies
 NIDS/NIPS solutions act very much like firewalls in that they inspect packets.
 There's 4 types of detection methods:
+
 1. Behavioral/Anomaly - Comparing traffic with a baseline of patterns considered normal for the network
 2. Signature - Preconfigured Signature-based
 3. Rule - Preconfigured rules in a ruleset - like firewall
@@ -72,3 +73,22 @@ SMTP standards cheking - Block anything doesn't follow RFC standards
 rDNS - Reverse DNS - Block email where the sender's domain doesn't match the IP Address
 Tarpitting - Intentionally slow down the server conversation
 Encryption - can be required on the gateway based on policy; force encryptionS
+
+
+
+\*\*Q: What is Intrusion Detection?\*\*
+
+
+
+\*\*A:\*\* An Intrusion Detection System (IDS) inspects inbound and outbound network activity or host logs to detect unauthorized access or anomalous behavior. It alerts administrators to potential security policy violations by checking:
+
+
+
+\* Known signature-based attack patterns
+
+\* Baseline network and host anomalies
+
+\* Unauthorized privilege escalation and file modifications
+
+
+
